@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Poppins;
+}
+
+body {
+     background-color: black;
+}
+
+.wrapper {
+     height: 100vh; /* calculates the viewport height using vh */
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+}
+
+.card-wrapper {
+     height: 400px;
+     width: 370px;
+     background-color: white;
+     border-radius: 26px;
+     display: flex;
+     /* align-items: center; */
+     justify-content: center;  
+}
+
+contents-wrapper {
+     position: absolute;
+}
+
+img {
+     height: 161px;
+     width: 321px;
+     margin-top: 20px;
+}
+
+h5 {
+     margin-top: 25px;
+     font-size: large;
+
+     color: #080809;
+     font-size: 18px;
+     font-weight: 700;
+     line-height: 124.5%; /* 22.41px */
+     letter-spacing: 0.27px;
+}
+
+p, span {
+     margin-top: 10px;
+
+     color: #84829A;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 124.5%; /* 19.92px */
+     letter-spacing: -0.08px;
+}
+
+.icon-navigator {
+     display: flex;
+}
+
+.icon-wrapper {
+     width: 36px;
+     height: 36px;
+     flex-shrink: 0;
+     background-color: #F5F5F5;
+     border-radius: 50%;
+     margin-right: 18px;
+     margin-top: 21px;
+}
+
+.svg-icons {
+     width: 14px;
+     height: 14px;
+     flex-shrink: 0;
+     margin: 12px 11px 10px 11px;
+}
+
+.building-wrapper {
+     display: flex;
+     align-items: center;
+     margin-top: 20px;
+}
+
