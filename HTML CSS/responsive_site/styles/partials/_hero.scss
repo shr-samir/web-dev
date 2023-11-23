@@ -1,0 +1,29 @@
+.hero {
+  width: 100%;
+  display: flex;
+  padding-top: 12rem;
+  gap: 7.5rem;
+
+  &__left {
+    //     padding-right: 5rem;
+    //     max-width: 20rem;
+    flex-basis: 57%;
+    h1 {
+      font-size: $fontsize__mainTheme;
+      font-weight: 600;
+      font-weight: 700;
+      line-height: 7rem; /* 125% */
+      letter-spacing: -1.12px;
+    }
+  }
+
+  &__right {
+    flex-basis: 43%;
+    padding-left: 10rem;
+  }
+}
+
+.phone {
+  width: 268px;
+  height: 542px;
+}

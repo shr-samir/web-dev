@@ -1,0 +1,73 @@
+.app__navbar {
+  background: $gradient;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  width: 100%;
+
+  &-logo {
+    // display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-family: Poppins;
+  }
+
+  &-links {
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+    justify-content: flex-end;
+    gap: 3.2rem;
+    list-style: none;
+    color: $light_white;
+
+    li {
+      cursor: pointer;
+      
+      a {
+        color: inherit;
+        font-weight: 400;
+        font-size: 1.6rem;
+        text-decoration: none;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &-smallscreen {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app__navbar {
+    &-logo {
+      font-size: 2rem;
+    }
+
+    &-links {
+      li {
+        a {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+.app__navbar {
+  &-links {
+    display: none;
+  }
+  &-smallscreen {
+    display: block;
+  }
+}
+}

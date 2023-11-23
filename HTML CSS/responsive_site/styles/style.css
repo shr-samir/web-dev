@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Plus Jakarta Sans;
+}
+
+.button {
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.button__signup {
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+}
+
+.app__navbar {
+  background: linear-gradient(45deg, #1B13A6 49.59%, #443CDF 88.57%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.app__navbar-logo {
+  align-items: center;
+  font-size: 2.4rem;
+  font-weight: 600;
+  font-family: Poppins;
+}
+.app__navbar-links {
+  align-items: center;
+  display: flex;
+  flex: 1 1;
+  justify-content: flex-end;
+  gap: 3.2rem;
+  list-style: none;
+  color: #B6B3EB;
+}
+.app__navbar-links li {
+  cursor: pointer;
+}
+.app__navbar-links li a {
+  color: inherit;
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+.app__navbar-links li a:hover {
+  color: #fff;
+}
+.app__navbar-smallscreen {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .app__navbar-logo {
+    font-size: 2rem;
+  }
+  .app__navbar-links li a {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 575px) {
+  .app__navbar-links {
+    display: none;
+  }
+  .app__navbar-smallscreen {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */

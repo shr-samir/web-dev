@@ -1,0 +1,12 @@
+//general for all button
+.button {
+  border-radius: .8rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  &__signup {
+    padding: 12px 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $white;
+    border: none;
+  }
+}
