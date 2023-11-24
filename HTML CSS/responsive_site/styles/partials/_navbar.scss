@@ -1,11 +1,17 @@
+// .header {
+//   background: $gradient;
+// }
+
 .app__navbar {
-  background: $gradient;
+  // position: fixed;
   color: $white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
   width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
 
   &-logo {
     // display: flex;
@@ -26,7 +32,7 @@
 
     li {
       cursor: pointer;
-      
+
       a {
         color: inherit;
         font-weight: 400;
@@ -62,12 +68,12 @@
 }
 
 @media screen and (max-width: 575px) {
-.app__navbar {
-  &-links {
-    display: none;
+  .app__navbar {
+    &-links {
+      display: none;
+    }
+    &-smallscreen {
+      display: block;
+    }
   }
-  &-smallscreen {
-    display: block;
-  }
-}
 }

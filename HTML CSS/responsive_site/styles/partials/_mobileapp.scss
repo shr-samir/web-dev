@@ -1,0 +1,35 @@
+.mobileapp {
+  width: 100vw;
+  padding-top: 11.3rem;
+  &__wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  &__container {
+    figure {
+      height: 45rem;
+      width: 80rem;
+      //  .img__customerTarget {
+
+      //  }
+    }
+  }
+}
+
+.mobileapp__store {
+  width: 68.8rem;
+  padding: 5.2rem;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+
+  h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px; /* 130% */
+    letter-spacing: -0.8px;
+  }
+}

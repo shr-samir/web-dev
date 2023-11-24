@@ -7,73 +7,168 @@
     <title>LegacyLine</title>
   </head>
   <body>
-    <div>
-      <header class="header">
-        <nav class="app__navbar">
-          <div class="app__navbar-logo">
-            <h1>LegacyLine.</h1>
-          </div>
-          <ul class="app__navbar-links">
-            <li class="app__navbar-link"><a href="#">Home</a></li>
-            <li class="app__navbar-link"><a href="#">Services</a></li>
-            <li class="app__navbar-link"><a href="#">Contact</a></li>
-            <li class="app__navbar-link"><a href="#">About Us</a></li>
-            <li class="app__navbar-link">
-              <button href="#" class="button button__signup">Sign Up</button>
-            </li>
-          </ul>
-          <div class="app__navbar-smallscreen">
-            <img
-              src="./assets/ic_round-menu.svg"
-              alt="Navigation Icon for Mobile View"
-            />
-          </div>
-        </nav>
-      </header>
-      <!-- <main>
-        <section class="hero">
-          <div class="hero__left">
-            <h1>Discover Financial Freedom with LegacyLine</h1>
-            <p>
-              Welcome to our bank's website, where we provide secure financial
-              solutions tailored to meet your unique needs.
-            </p>
-            <div class="account__buttons">
-              <button>Open Bank Account</button>
-              <button>Learn More</button>
+    <div class="app">
+      <div class="app__wrapper-gradient">
+        <header class="header">
+          <nav class="app__navbar">
+            <div class="app__navbar-logo">
+              <h1>LegacyLine.</h1>
             </div>
-            <div class="stats">
-              <div class="stats__fees">
-                <h4><0.1%</h4>
-                <p>Transaction Fees</p>
-              </div>
-              <div class="stats__savings">
-                <h4>+14%</h4>
-                <p>Savings Percentage</p>
-              </div>
-              <div class="stats__bankOwners">
-                <h4>+2.9M</h4>
-                <p>Buisness Owner</p>
-              </div>
-            </div>
-          </div>
-          <div class="hero__right">
-            <figure class="phone">
+            <ul class="app__navbar-links">
+              <li class="app__navbar-link"><a href="#">Home</a></li>
+              <li class="app__navbar-link"><a href="#">Services</a></li>
+              <li class="app__navbar-link"><a href="#">Contact</a></li>
+              <li class="app__navbar-link"><a href="#">About Us</a></li>
+              <li class="app__navbar-link">
+                <button href="#" class="button button__signup">Sign Up</button>
+              </li>
+            </ul>
+            <div class="app__navbar-smallscreen">
               <img
-                src="./assets/phone.svg"
-                alt="Financial Analysis on Your Phone"
+                src="./assets/ic_round-menu.svg"
+                alt="Navigation Icon for Mobile View"
+              />
+            </div>
+          </nav>
+        </header>
+        <main>
+          <section class="hero">
+            <div class="hero__details">
+              <h1>Discover Financial Freedom with LegacyLine</h1>
+              <p>
+                Welcome to our bank's website, where we provide secure financial
+                solutions tailored to meet your unique needs.
+              </p>
+              <div class="hero__details-buttons">
+                <button class="button button__openAC">Open Bank Account</button>
+                <button class="button button__learnMore">Learn More</button>
+              </div>
+              <div class="hero__details-stats">
+                <div class="stats__fees">
+                  <h4><0.1%</h4>
+                  <p>Transaction Fees</p>
+                </div>
+                <div class="stats__savings">
+                  <h4>+14%</h4>
+                  <p>Savings Percentage</p>
+                </div>
+                <div class="stats__owners">
+                  <h4>+2.9M</h4>
+                  <p>Buisness Owner</p>
+                </div>
+              </div>
+            </div>
+            <div class="hero__images">
+              <figure>
+                <img
+                  src="./assets/phone.svg"
+                  class="hero__images-phone"
+                  alt="Financial Analysis on Your Phone"
+                />
+                <img
+                  src="./assets/Master Card 3 (Simple Purple).svg"
+                  class="hero__images-mastercard"
+                  alt="MasterCard"
+                />
+              </figure>
+            </div>
+          </section>
+        </main>
+      </div>
+      <section class="clients">
+        <div class="clients__wrapper">
+          <figure>
+            <img src="./assets/binance.svg" alt="Binance" />
+            <img src="./assets/ibm.svg" alt="IBM" />
+            <img src="./assets/pnc.svg" alt="PNC" />
+            <img src="./assets/twb.svg" alt="The World Bank" />
+            <img src="./assets/stripe.svg" alt="stripe" />
+          </figure>
+        </div>
+      </section>
+      <section class="benefits">
+        <div class="benefits__wrapper">
+          <h2>Our Key Benefits</h2>
+          <div class="benefits__cards">
+            <div class="benefits__cards-item">
+              <img src="./assets/fs.svg" alt="Financial Services" />
+              <h6>Financial Services</h6>
+              <p>
+                Banks provide a wide range of financial services, including
+                checking and savings accounts, loans, credit cards, and
+                investment production...
+              </p>
+              <div class="readmore__wrapper">
+                <a href="#">Read More</a>
+                <a href="#"
+                  ><img src="./assets/arrow_forward.svg" alt="Arrow Forward"
+                /></a>
+              </div>
+            </div>
+            <div class="benefits__cards-item">
+              <img src="./assets/ss.svg" alt="Safety and Security" />
+              <h6>Safety and Security</h6>
+              <p>
+                Deposits in most banks are insured by government agencies, such
+                as the Federal Deposit Insurance Corporation (FDIC.....
+              </p>
+
+              <div class="readmore__wrapper">
+                <a href="#">Read More</a>
+                <a href="#"
+                  ><img src="./assets/arrow_forward.svg" alt="Arrow Forward"
+                /></a>
+              </div>
+            </div>
+            <div class="benefits__cards-item">
+              <img src="./assets/es.svg" alt="Economic Stability" />
+              <h6>Economic Stability</h6>
+              <p>
+                Deposits in most banks are insured by government agencies, such
+                as the Federal Deposit Insurance Corporation (FDIC.....
+              </p>
+              <div class="readmore__wrapper">
+                <a href="#">Read More</a>
+                <a href="#"
+                  ><img src="./assets/arrow_forward.svg" alt="Arrow Forward"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mobileapp">
+        <div class="mobileapp__wrapper">
+          <div class="mobileapp__container">
+            <figure>
+              <img
+                src="./assets/customerTarget.svg"
+                class="img__customerTarget"
+                alt="Customer using LegacyLine"
               />
             </figure>
-            <figure class="mastercard">
-              <img
-                
-                src="./assets/Master Card 3 (Simple Purple).svg"
-                alt="MasterCard"
-              />
-            </figure>
+            <div class="moblieapp__store">
+              <h3>Ready for the future?</h3>
+              <h3>Download The App!</h3>
+              <p>
+                Download the banking app to easily manage your finances, check
+                account balances, transfer money, pay bills, and access a range
+                of banking services from your mobile device.
+              </p>
+              <div class="mobileapp__store-links">
+                <a href="#"
+                  ><img
+                    src="./assets/Play Store badge.svg"
+                    alt="Play Store Link"
+                /></a>
+                <a href="#"
+                  ><img src="./assets/App Store badge.svg" alt="App Store Link"
+                /></a>
+              </div>
+            </div>
           </div>
-        </section>
-      </main> -->
+        </div>
+      </section>
     </div>
   </body>
 </html>

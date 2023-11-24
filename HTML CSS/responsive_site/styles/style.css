@@ -15,26 +15,51 @@ body {
   font-family: Plus Jakarta Sans;
 }
 
+.app {
+  width: 100vw;
+}
+
+.app__wrapper-gradient {
+  background: linear-gradient(45deg, #1B13A6 49.59%, #443CDF 88.57%);
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .button {
   border-radius: 0.8rem;
   font-size: 1.6rem;
   cursor: pointer;
-}
-.button__signup {
-  padding: 12px 24px;
-  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
+  color: #B6B3EB;
+  padding: 2.4rem 3.2rem;
+}
+.button__signup {
+  padding: 1.2rem 2.4rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.button__openAC {
+  color: #110C64;
+  background-color: #fff;
+}
+.button__learnMore {
+  background-color: transparent;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
 }
 
 .app__navbar {
-  background: linear-gradient(45deg, #1B13A6 49.59%, #443CDF 88.57%);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
   width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 .app__navbar-logo {
   align-items: center;
@@ -82,4 +107,153 @@ body {
   .app__navbar-smallscreen {
     display: block;
   }
+}
+.hero {
+  display: flex;
+  gap: 7.5rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 8rem 2rem 17.5rem;
+}
+.hero__details {
+  flex-basis: 50%;
+}
+.hero__details h1 {
+  font-size: 5.6rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 7rem; /* 125% */
+  letter-spacing: -1.12px;
+}
+.hero__details p {
+  color: #B6B3EB;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 3.2rem 0;
+}
+.hero__details-buttons {
+  display: flex;
+  gap: 3.2rem;
+}
+.hero__details-stats {
+  display: flex;
+  padding-top: 4rem;
+  gap: 5.2rem;
+  color: #B6B3EB;
+}
+.hero__details-stats h4 {
+  font-size: 3.2rem;
+}
+.hero__details-stats p {
+  font-size: 1.6rem;
+}
+.hero__images {
+  flex-basis: 50%;
+  position: relative;
+}
+.hero__images-mastercard {
+  position: absolute;
+  top: 154px;
+  left: 197px;
+}
+
+.phone {
+  width: 268px;
+  height: 542px;
+}
+
+.clients {
+  width: 100vw;
+  background-color: rgb(102, 102, 211);
+}
+.clients__wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.clients figure {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.benefits {
+  width: 100vw;
+  padding-top: 12rem;
+}
+.benefits__wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.benefits__wrapper h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+  letter-spacing: -0.8px;
+}
+.benefits__wrapper .benefits__cards {
+  padding-top: 4rem;
+  display: flex;
+  gap: 8rem;
+}
+.benefits__wrapper .benefits__cards-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.benefits__wrapper .benefits__cards-item img {
+  height: 80px;
+  width: 80px;
+}
+.benefits__wrapper .benefits__cards-item h6 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 2.4rem 0 1.2rem;
+}
+.benefits__wrapper .benefits__cards-item p {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  font-weight: 400;
+  padding-bottom: 3.2rem;
+}
+.benefits__wrapper .benefits__cards .readmore__wrapper {
+  display: flex;
+  gap: 0.8rem;
+}
+.benefits__wrapper .benefits__cards .readmore__wrapper a {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+.benefits__wrapper .benefits__cards .readmore__wrapper img {
+  height: 18px;
+  width: 18px;
+}
+
+.mobileapp {
+  width: 100vw;
+  padding-top: 11.3rem;
+}
+.mobileapp__wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.mobileapp__container figure {
+  height: 45rem;
+  width: 80rem;
+}
+
+.mobileapp__store {
+  width: 68.8rem;
+  padding: 5.2rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.mobileapp__store h3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px; /* 130% */
+  letter-spacing: -0.8px;
 }/*# sourceMappingURL=style.css.map */

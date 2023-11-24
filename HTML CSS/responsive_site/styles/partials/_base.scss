@@ -12,3 +12,22 @@ html {
 body {
   font-family: Plus Jakarta Sans;
 }
+
+.app {
+  width: 100vw;
+  // &__wrapper {
+  //   width: 100%;
+  //   max-width: 120rem;
+  //   margin: 0 auto;
+  // }
+}
+
+.app__wrapper-gradient {
+  background: $gradient;
+}
+
+main {
+  width: 100%;
+  // max-width: 120rem;
+  margin: 0 auto;
+}

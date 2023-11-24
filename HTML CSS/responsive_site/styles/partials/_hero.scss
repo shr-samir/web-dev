@@ -1,25 +1,60 @@
 .hero {
-  width: 100%;
   display: flex;
-  padding-top: 12rem;
   gap: 7.5rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 8rem 2rem 17.5rem;
 
-  &__left {
-    //     padding-right: 5rem;
-    //     max-width: 20rem;
-    flex-basis: 57%;
+  &__details {
+    flex-basis: 50%;
     h1 {
       font-size: $fontsize__mainTheme;
-      font-weight: 600;
+      color: $white;
       font-weight: 700;
       line-height: 7rem; /* 125% */
       letter-spacing: -1.12px;
     }
+
+    p {
+      color: $light_white;
+      font-size: 18px;
+      font-weight: 400;
+      padding: 3.2rem 0;
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 3.2rem;
+    }
+
+    &-stats {
+      display: flex;
+      padding-top: 4rem;
+      gap: 5.2rem;
+      color: $light_white;
+
+      h4 {
+        font-size: 3.2rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+      }
+    }
   }
 
-  &__right {
-    flex-basis: 43%;
-    padding-left: 10rem;
+  &__images {
+    flex-basis: 50%;
+    position: relative;
+    // &-phone {
+    //   filter: blur(20px);
+    // }
+    &-mastercard {
+      position: absolute;
+      top: 154px;
+      left: 197px;
+    }
   }
 }
 
