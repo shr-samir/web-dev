@@ -1,35 +1,57 @@
 .mobileapp {
   width: 100vw;
-  padding-top: 11.3rem;
+  padding: 11.3rem 0;
   &__wrapper {
     max-width: 120rem;
     margin: 0 auto;
   }
 
   &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     figure {
-      height: 45rem;
-      width: 80rem;
-      //  .img__customerTarget {
-
-      //  }
+      height: 50rem;
+      width: 100rem; //1168px
+      overflow: hidden;
+      max-width: 100%;
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
     }
   }
 }
 
 .mobileapp__store {
-  width: 68.8rem;
-  padding: 5.2rem;
+  position: absolute;
+  max-width: 100%;
+  top: 54px;
+  right: -16px;
+  width: 60rem;  //68.8px
+  padding: 3.5rem;  //52px
+  border-radius: .8rem;
   background-color: $white;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
+  flex-wrap: wrap;
+  gap: 3rem; //4rem 2.4rem;
 
   h3 {
     font-size: 40px;
     font-weight: 700;
     line-height: 52px; /* 130% */
     letter-spacing: -0.8px;
+  }
+
+  p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
   }
 }

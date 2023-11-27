@@ -232,28 +232,54 @@ main {
 
 .mobileapp {
   width: 100vw;
-  padding-top: 11.3rem;
+  padding: 11.3rem 0;
 }
 .mobileapp__wrapper {
   max-width: 120rem;
   margin: 0 auto;
 }
+.mobileapp__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 .mobileapp__container figure {
-  height: 45rem;
-  width: 80rem;
+  height: 50rem;
+  width: 100rem;
+  overflow: hidden;
+  max-width: 100%;
+}
+.mobileapp__container figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .mobileapp__store {
-  width: 68.8rem;
-  padding: 5.2rem;
+  position: absolute;
+  max-width: 100%;
+  top: 54px;
+  right: -16px;
+  width: 60rem;
+  padding: 3.5rem;
+  border-radius: 0.8rem;
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 .mobileapp__store h3 {
   font-size: 40px;
   font-weight: 700;
   line-height: 52px; /* 130% */
   letter-spacing: -0.8px;
+}
+.mobileapp__store p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
 }/*# sourceMappingURL=style.css.map */
