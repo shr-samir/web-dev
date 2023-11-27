@@ -1,0 +1,50 @@
+.schedule {
+  max-width: 1440px; //given width of design
+  margin: 0 auto;
+  padding: 0 80px 0 50px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+
+  img {
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(196, 196, 196, 0.1);
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  //   &__wrapper {
+  //     margin-top: 83px;
+  //   }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+justify-content: space-between;
+    padding: 50px 40px;
+
+    border-radius: 20px 20px 0px 0px;
+    background: rgba(196, 196, 196, 0.05);
+
+    &--wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 60px;
+    }
+
+    &--location,
+    &--date,
+    &--vaccine {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.banner {
+//   max-width: 1440px; //given width of design
+  background: rgba(99, 98, 98, 0.5);
+  margin: 0 auto;
+  padding: 0 80px 0 50px;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+}

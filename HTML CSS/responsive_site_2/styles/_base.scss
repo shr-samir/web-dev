@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app {
+  width: 100vw;
+
+  color: $white;
+
+  &__wrapper {
+    width: 100%;
+
+    &--bgImage {
+      background-image: url(../assets/bg.png);
+    }
+  }
+}

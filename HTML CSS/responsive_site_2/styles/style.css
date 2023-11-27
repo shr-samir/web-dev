@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.app {
+  width: 100vw;
+  color: #fff;
+}
+.app__wrapper {
+  width: 100%;
+}
+.app__wrapper--bgImage {
+  background-image: url(../assets/bg.png);
+}
+
+.btn {
+  padding: 20px 25px;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+}
+.btn__status {
+  color: #17C2EC;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 2px 5px #000;
+}
+.btn__getVaccine {
+  background-color: #17C2EC;
+}
+.btn__helpcenter {
+  border: 2px solid #17c2ec;
+  background: rgba(196, 196, 196, 0.1);
+}
+.btn__submit {
+  background-color: #17C2EC;
+}
+
+.header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 80px 24px 50px;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.header__wrapper--logo {
+  font-weight: 700;
+}
+.header__wrapper--logo h1 {
+  font-size: 24px;
+  cursor: pointer;
+}
+.header__wrapper--logo .logo__underline {
+  width: 100px;
+  height: 3px;
+  background-color: #17C2EC;
+}
+.header__wrapper--nav ul {
+  display: flex;
+  gap: 25px;
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+.header__wrapper--nav ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+.header__wrapper--nav ul li a:hover {
+  color: #fff;
+}
+.header__wrapper--menuIcon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 50px 50px;
+  }
+  .header__wrapper--logo {
+    font-size: 25.5px;
+  }
+  .header__wrapper--nav, .header__wrapper--btnStatus {
+    display: none;
+  }
+  .header__wrapper--menuIcon {
+    display: block;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header {
+    padding: 35px 56px;
+  }
+  .header__wrapper--logo {
+    font-size: 16px;
+  }
+}
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 120px 24px 50px;
+  width: 100%;
+}
+.hero__wrapper {
+  display: flex;
+  gap: 220px;
+}
+.hero__texts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.hero__texts--msg {
+  color: #17C2EC;
+  font-size: 18px;
+  font-weight: 700;
+}
+.hero__texts--heading {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 800;
+}
+.hero__texts--heading span {
+  color: #17C2EC;
+}
+.hero__texts--nigeria {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  font-weight: 700;
+}
+.hero__texts--buttons {
+  display: flex;
+  gap: 20px;
+}
+.hero__images {
+  width: 100%;
+}
+.hero__images--wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.hero__images--doctors {
+  display: flex;
+  border-radius: 20px;
+  background: rgba(196, 196, 196, 0.2);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  flex-shrink: 0;
+  padding: 20px;
+  align-items: center;
+  position: absolute;
+  top: 513px;
+  left: -44px;
+}
+.hero__images--doctors img {
+  height: 50px;
+  width: 50px;
+}
+.hero__images--doctors p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+.hero__images--doctors p span {
+  color: #17C2EC;
+}
+.hero__images figure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 532px;
+}
+.hero__images--smallImg {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  max-width: 100%;
+}
+.hero__images--animation {
+  left: -40px;
+}
+.hero__images--virus {
+  left: 495px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero__wrapper {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  .hero__images {
+    padding: 0 42px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .hero__images figure {
+    width: 256px;
+  }
+}
+.schedule {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px 0 50px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+}
+.schedule img {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(196, 196, 196, 0.1);
+}
+.schedule__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.schedule__details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 40px;
+  border-radius: 20px 20px 0px 0px;
+  background: rgba(196, 196, 196, 0.05);
+}
+.schedule__details--wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+.schedule__details--location, .schedule__details--date, .schedule__details--vaccine {
+  display: flex;
+  gap: 20px;
+}
+
+.banner {
+  background: rgba(99, 98, 98, 0.5);
+  margin: 0 auto;
+  padding: 0 80px 0 50px;
+  width: 100%;
+}
+.banner__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}/*# sourceMappingURL=style.css.map */
