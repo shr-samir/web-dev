@@ -1,0 +1,179 @@
+:root {
+  /* color */
+  --primary-color: #BFC8CF;
+  --secondary-color: #778691;
+  --heading-color: #F7A453;
+  --text-color: #777;
+  --box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --background-color: rgb(245, 240, 245, .9);
+  --scrollbar-thumb-color: #bbb;
+  /* font */
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --heading-font-size: 36px;
+  --font-size: 16px;
+  /* other */
+  --border-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  font-family: var(--font-family);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 75vh;
+  width: 300px;
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-color);
+}
+
+.app__heading {
+  position: absolute;
+  top: 50px;
+  color: var(--heading-color);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: var(--heading-font-size);
+  font-weight: 700;
+}
+.app__inputField {
+  position: absolute;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  background-color: rgb(255, 255, 255);
+}
+.app__inputField input[type=text] {
+  width: 70%;
+  height: 30px;
+  padding: 10px;
+  font-size: var(--font-size);
+  border: none;
+  background: none;
+  outline: none;
+}
+.app__inputField button[type=submit] {
+  width: 15%;
+  font-size: var(--font-size);
+  margin-left: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.app__inputField button[type=submit]:hover {
+  opacity: 0.8;
+}
+.app__heading-2 {
+  position: absolute;
+  top: 200px;
+  color: var(--text-color);
+  font-size: var(--heading-font-size-10);
+  font-weight: 500;
+  font-family: "Bebas Neue", sans-serif;
+}
+.app__taskList {
+  position: absolute;
+  top: 220px;
+  list-style-type: none;
+  width: 80%;
+  max-height: 205px;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  scrollbar-color: transparent #ccc;
+  /* set the color of the scrollbar thumb and track */
+  scrollbar-width: thin;
+  /* set the width of the scrollbar */
+}
+.app__taskList::-webkit-scrollbar {
+  width: 8px;
+  /* set the width of the scrollbar on webkit browsers */
+}
+.app__taskList::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  /* set the color of the scrollbar thumb on webkit browsers */
+}
+.app__taskList ::-webkit-scrollbar-track {
+  background: transparent;
+  /* set the color of the scrollbar track on webkit browsers */
+}
+.app__taskList li {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+  margin-top: 10px;
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.app__taskList li:hover {
+  background-color: rgb(255, 255, 255);
+}
+.app__taskList li input[type=checkbox] {
+  margin-left: 25px;
+  cursor: pointer;
+  accent-color: var(--heading-color);
+}
+.app__taskList li span {
+  padding-left: 10px;
+  font-size: var(--font-size);
+  color: var(--text-color);
+}
+.app__taskList li button {
+  font-size: var(--font-size);
+  width: 40px;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.app__taskList li button:hover {
+  opacity: 0.8;
+}
+.app .taskList li .edit-input[type=text] {
+  width: 70%;
+  margin: 0;
+  padding-left: 10px;
+  font-size: var(--font-size);
+  color: var(--text-color);
+}
+.app .taskList li .taskDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.app__taskList li.completed .taskDetails span {
+  text-decoration: line-through;
+}
+
+.app__taskList--wrapper {
+  width: 100%;
+  padding-bottom: 20px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,9 @@
-.banner {
-//   max-width: 1440px; //given width of design
+.banner__bg {
   background: rgba(99, 98, 98, 0.5);
+}
+
+.banner {
+  max-width: 1440px; //given width of design
   margin: 0 auto;
   padding: 0 80px 0 50px;
   width: 100%;
@@ -9,6 +12,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 20px 0;
+
+    img {
+      max-width: 280px;
+      @media screen and (max-width: 1300px) {
+        max-width: 190px;
+      }
+
+      @media screen and (max-width: 768px) {
+        max-width: 148px;
+      }
+
+      @media screen and (max-width: 375px) {
+        max-width: 73px;
+      }
+    }
   }
 }

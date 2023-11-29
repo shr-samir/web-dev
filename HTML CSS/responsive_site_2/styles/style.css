@@ -25,7 +25,7 @@ body {
   cursor: pointer;
   border-radius: 20px;
   color: #fff;
-  font-size: 18px;
+  font-size: 24px;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   font-weight: 700;
@@ -43,37 +43,46 @@ body {
   background: rgba(196, 196, 196, 0.1);
 }
 .btn__submit {
+  padding: 20px 40px;
+  background-color: #17C2EC;
+}
+
+@media screen and (max-width: 1135px) {
+  .btn {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .btn {
+    font-size: 14px;
+  }
+}
+.logo__underline {
+  width: 100px;
+  height: 3px;
   background-color: #17C2EC;
 }
 
 .header {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 80px 24px 50px;
+  padding: 41px 70px 0 70px;
 }
 .header__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-}
-.header__wrapper--logo {
-  font-weight: 700;
 }
 .header__wrapper--logo h1 {
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 700;
   cursor: pointer;
-}
-.header__wrapper--logo .logo__underline {
-  width: 100px;
-  height: 3px;
-  background-color: #17C2EC;
 }
 .header__wrapper--nav ul {
   display: flex;
   gap: 25px;
   list-style-type: none;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
 }
 .header__wrapper--nav ul li a {
@@ -87,12 +96,13 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .header {
-    padding: 50px 50px;
-  }
-  .header__wrapper--logo {
+@media screen and (max-width: 1135px) {
+  .header__wrapper--logo h1 {
     font-size: 25.5px;
+  }
+  .header__wrapper--logo__underline {
+    width: 79.681px;
+    height: 2.39px;
   }
   .header__wrapper--nav, .header__wrapper--btnStatus {
     display: none;
@@ -101,38 +111,37 @@ body {
     display: block;
   }
 }
-@media screen and (max-width: 375px) {
-  .header {
-    padding: 35px 56px;
-  }
-  .header__wrapper--logo {
-    font-size: 16px;
+@media screen and (max-width: 430px) {
+  .header__wrapper--logo h1 {
+    font-size: 18px;
   }
 }
 .hero {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 120px 24px 50px;
+  padding: 100px 70px;
   width: 100%;
 }
 .hero__wrapper {
   display: flex;
-  gap: 220px;
+  justify-content: space-between;
+  gap: 20px;
 }
 .hero__texts {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 40px;
+  width: 50%;
 }
 .hero__texts--msg {
   color: #17C2EC;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
 }
-.hero__texts--heading {
+.hero__texts--heading h3 {
   color: #fff;
-  font-size: 35px;
+  font-size: 48px;
   font-weight: 800;
 }
 .hero__texts--heading span {
@@ -140,7 +149,7 @@ body {
 }
 .hero__texts--nigeria {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
 }
 .hero__texts--buttons {
@@ -148,76 +157,72 @@ body {
   gap: 20px;
 }
 .hero__images {
-  width: 100%;
+  width: 50%;
 }
 .hero__images--wrapper {
-  display: flex;
-  flex-direction: column;
+  max-width: 622px;
   position: relative;
 }
-.hero__images--doctors {
+.hero__images--wrapper figure img {
+  width: 100%;
+}
+.hero__images--specialists {
+  max-width: 374px;
   display: flex;
+  gap: 20px;
+  padding: 20px;
   border-radius: 20px;
   background: rgba(196, 196, 196, 0.2);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 320px;
-  flex-shrink: 0;
-  padding: 20px;
-  align-items: center;
   position: absolute;
-  top: 513px;
-  left: -44px;
+  top: 89%;
+  left: 1%;
 }
-.hero__images--doctors img {
-  height: 50px;
-  width: 50px;
+.hero__images--specialists img {
+  width: 100%;
 }
-.hero__images--doctors p {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
+.hero__images--specialists p {
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
+  flex-wrap: wrap;
+  font-size: 24px;
+  font-weight: 700;
 }
-.hero__images--doctors p span {
+.hero__images--specialists p span {
   color: #17C2EC;
 }
-.hero__images figure {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 532px;
-}
-.hero__images--smallImg {
-  width: 80px;
-  height: 80px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 20px;
-  position: absolute;
-  max-width: 100%;
-}
-.hero__images--animation {
-  left: -40px;
-}
-.hero__images--virus {
-  left: 495px;
-}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1135px) {
   .hero__wrapper {
     flex-direction: column;
-    flex-wrap: wrap;
-    gap: 25px;
+    gap: 55px;
+  }
+  .hero__texts {
+    width: 100%;
+  }
+  .hero__texts p {
+    font-size: 18px;
+  }
+  .hero__texts h3 {
+    font-size: 36px;
   }
   .hero__images {
-    padding: 0 42px;
+    width: 100%;
+    padding: 0 23px;
   }
 }
-@media screen and (max-width: 376px) {
-  .hero__images figure {
-    width: 256px;
+@media screen and (max-width: 610px) {
+  .hero__images--specialists {
+    max-width: 238px;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  .hero__images--specialists img {
+    width: 108px;
+  }
+  .hero__images--specialists p {
+    font-size: 14px;
   }
 }
 .schedule {
@@ -242,25 +247,31 @@ body {
 .schedule__details {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 50px 40px;
   border-radius: 20px 20px 0px 0px;
   background: rgba(196, 196, 196, 0.05);
 }
 .schedule__details--wrapper {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 55px;
 }
 .schedule__details--location, .schedule__details--date, .schedule__details--vaccine {
   display: flex;
   gap: 20px;
 }
 
-.banner {
+.banner__bg {
   background: rgba(99, 98, 98, 0.5);
+}
+
+.banner {
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 80px 0 50px;
   width: 100%;
@@ -269,5 +280,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 20px 0;
+}
+.banner__wrapper img {
+  max-width: 280px;
+}
+@media screen and (max-width: 1300px) {
+  .banner__wrapper img {
+    max-width: 190px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner__wrapper img {
+    max-width: 148px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .banner__wrapper img {
+    max-width: 73px;
+  }
 }/*# sourceMappingURL=style.css.map */

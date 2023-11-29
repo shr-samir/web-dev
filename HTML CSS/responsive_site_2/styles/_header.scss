@@ -1,29 +1,27 @@
+.logo__underline {
+        width: 100px;
+        height: 3px;
+        background-color: $greenish-blue;
+      }
+
 .header {
   max-width: 1440px; //given width of design
   margin: 0 auto;
-  padding: 24px 80px 24px 50px ;
+  padding: 41px 70px 0 70px;
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     //padding thapna sakxu
 
     &--logo {
-      //  color: $white;
-      // font-size: 32px;
-      font-weight: 700;
-
+      
       h1 {
-        font-size: 24px;
+        font-size: 32px;
+        font-weight: 700;
         cursor: pointer;
-      }
-
-      .logo__underline {
-        width: 100px;
-        height: 3px;
-        background-color: $greenish-blue;
       }
     }
 
@@ -32,7 +30,7 @@
         display: flex;
         gap: 25px;
         list-style-type: none;
-        font-size: 18px;
+        font-size: 24px;
         font-weight: 500;
         li {
           a {
@@ -52,12 +50,18 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1135px) {
   .header {
-    padding: 50px 50px;
     &__wrapper {
       &--logo {
-        font-size: 25.5px;
+        h1 {
+          font-size: 25.5px;
+        }
+
+        &__underline {
+          width: 79.681px;
+          height: 2.39px;
+        }
       }
       &--nav,
       &--btnStatus {
@@ -71,13 +75,14 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 430px) {
   .header {
-    padding: 35px 56px;
 
     &__wrapper {
       &--logo {
-        font-size: 16px;
+        h1 {
+          font-size: 18px;
+        }
       }
     }
   }

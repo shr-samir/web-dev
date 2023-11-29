@@ -1,11 +1,12 @@
 .hero {
   max-width: 1440px; //given width of design
   margin: 0 auto;
-  padding: 24px 120px 24px 50px;
+  padding: 100px 70px;
   width: 100%;
   &__wrapper {
     display: flex;
-    gap: 220px;
+    justify-content: space-between;
+    gap: 20px;
   }
 
   &__texts {
@@ -13,15 +14,18 @@
     flex-direction: column;
     flex-wrap: wrap;
     gap: 40px;
+    width: 50%;
     &--msg {
       color: $greenish-blue;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 700;
     }
     &--heading {
-      color: $white;
-      font-size: 35px;
-      font-weight: 800;
+      h3 {
+        color: $white;
+        font-size: 48px;
+        font-weight: 800;
+      }
       span {
         color: $greenish-blue;
       }
@@ -29,7 +33,7 @@
 
     &--nigeria {
       color: rgba(255, 255, 255, 0.7);
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 700;
     }
 
@@ -40,105 +44,102 @@
   }
 
   &__images {
-       width: 100%;
+    width: 50%;
     &--wrapper {
-      display: flex;
-      flex-direction: column;
+      max-width: 622px;
       position: relative;
+
+      figure {
+        img {
+          width: 100%;
+        }
+      }
     }
 
-
-    // for doctors block
-    &--doctors {
+    &--specialists {
+      max-width: 374px;
       display: flex;
+      gap: 20px;
+      padding: 20px;
+
       border-radius: 20px;
       background: rgba(196, 196, 196, 0.2);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1),
         0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-      width: 320px;
-      flex-shrink: 0;
-      padding: 20px;
-      align-items: center;
-
       position: absolute;
-      top: 513px;
-      left: -44px;
+      top: 89%;
+      left: 1%;
 
-      img {
-          height: 50px;
-          width: 50px;
+      img { 
+        width: 100%;
       }
 
-      p { 
-        color: $white;
-        font-size: 18px;
+      p {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 24px;
         font-weight: 700;
-          display: flex;
-          flex-direction: column;
-          padding-left: 20px;
 
         span {
           color: $greenish-blue;
         }
       }
     }
+  }
+}
 
-    // for hero images
-    figure {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 532px;
-
+@media screen and (max-width: 1135px) {
+  .hero {
+    &__wrapper {
+      flex-direction: column;
+      gap: 55px;
     }
 
-    &--smallImg {
-      width: 80px;
-      height: 80px;
-      padding: 10px;
-      background-color: $white;
-      border-radius: 20px;
-     //  z-index: 1;
-      position: absolute;
-      max-width: 100%;
+    &__texts {
+      width: 100%;
+      p {
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 36px;
+      }
     }
 
-//     &--vaccine {
-      
-//     }
-
-    &--animation {
-      left: -40px;
-    }
-
-    &--virus {
-      left: 495px;
+    &__images {
+      width: 100%;
+      padding: 0 23px;
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-     .hero {
-          &__wrapper {
-               flex-direction: column;
-               flex-wrap: wrap;
-               gap: 25px;
-          }
+@media screen and (max-width: 610px) {
+  .hero {
+    &__images {
+      &--specialists {
+        max-width: 238px;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 5px;
 
-          &__images {
-               padding: 0 42px;
-          }
-     }
+        img {
+          width: 108px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 
-@media screen and (max-width: 376px) {
-     .hero {
-          &__images {
-               figure {
-                    width: 256px;
-               }
-          }
-     }
-}
-
+// for specialist div only
+// @media screen and (max-width: 430px) {
+//   padding: 15px;
+//   gap: 15px;
+//   // top: ;
+//   // left: ;
+// }
