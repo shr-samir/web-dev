@@ -1,0 +1,147 @@
+.registration__bg {
+  background-image: url('../assets/smokewhite__bg.png');
+  //   background-color: rgba(255, 255, 255, 0.50);
+}
+
+.registration {
+  max-width: 1440px; //given width of design
+  margin: 0 auto;
+  padding: 62px 80px 62px 50px;
+  width: 100%;
+  color: #000000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__form {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      p {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      input {
+        margin-bottom: 40px;
+        padding: 20px 30px;
+        font-size: 24px;
+        font-weight: 500;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        background: rgba(11, 21, 60, 0.15);
+      }
+      span {
+        input {
+          margin: 0;
+          padding: 0;
+          border-radius: none;
+          background: none;
+        }
+      }
+    }
+  }
+
+  &__status {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 40px 0;
+
+    span {
+      cursor: pointer;
+    }
+
+    &--blue {
+      color: $greenish-blue;
+    }
+  }
+
+  //img sub section
+
+  &__image {
+    width: 380px;
+    height: 550px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #0b153c;
+    position: relative;
+
+    figure {
+      margin-top: 70px;
+    }
+
+    &--virus {
+      position: absolute;
+      top: -24px;
+      left: -29px;
+    }
+  }
+}
+
+.phone__verify {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.phone {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px;
+  background: rgba(11, 21, 60, 0.15);
+
+  > div {
+    width: 3px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  input {
+    border: none;
+    background: none;
+    border-radius: 0;
+  }
+
+  &__country {
+     cursor: pointer;
+  }
+}
+
+#notification {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+//verify status in image
+
+.btn__register--status {
+  position: absolute;
+  border-radius: 10px;
+  background: rgba(196, 196, 196, 0.25);
+  bottom: 44px;
+  left: 100px;
+}

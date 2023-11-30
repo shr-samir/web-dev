@@ -29,6 +29,31 @@
     background-color: $greenish-blue;
     // margin-left: 150px;
   }
+
+  &__check {
+    padding: 20px 45px;
+    color: $greenish-blue;
+    border: 4px solid $greenish-blue;
+  }
+
+  &__verify {
+      &--register {
+        padding: 20px 60px;
+        background-color: $greenish-blue;
+      }
+    }
+
+    &__submit {
+      &--register {
+        width: 100%;
+        margin-top: 30px;
+        padding: 20px 0;
+        background-color: $greenish-blue;
+        text-align: center;
+
+      }
+    }
+    
 }
 
 @media screen and (max-width: 1135px) {
