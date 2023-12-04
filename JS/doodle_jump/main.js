@@ -76,6 +76,10 @@ function update() {
     doodler.x = CANVAS_WIDTH - doodlerWidth
   }
 
+  if (doodler.y < 0) {
+    doodler.y = 0  
+  }
+
   VY += gravity
   doodler.y += VY - 2
 
