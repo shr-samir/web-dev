@@ -8,6 +8,8 @@ function animate() {
   move(player)
   update(player)
   
+  boundariesCollision() 
+  
 }
 
 animate()

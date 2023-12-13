@@ -17,22 +17,24 @@ class Player {
       x: 0,
       y: 0,
     }
-    this.width = 64
+    this.width = 64 - 22
     this.height = 64
     this.isGrounded = true
     this.lastKey = 'right'
   }
 
   draw() {
+    ctx.fillStyle = 'blue'
+    ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     ctx.drawImage(
       this.spriteImg,
       this.frameX,
       this.frameY * this.spriteHeight,
       this.spriteWidth,
       this.spriteHeight,
-      this.position.x,
+      this.position.x - 9,
       this.position.y,
-      this.width,
+      this.spriteWidth * 2,
       this.height
     )
   }

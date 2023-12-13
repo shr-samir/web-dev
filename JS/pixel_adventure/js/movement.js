@@ -72,6 +72,34 @@ function moveJump(object) {
   }
 }
 
-function moveSlide(object) {
-     
+function slideRight(object) {
+     // console.log(object.isGrounded)
+  if (!object.isGrounded) {
+    object.spriteImg.src =
+      '../assets/pixel_adventure_1/main_characters/virtual_guy/slide-right.png'
+     //  console.log(object.velocity.y);
+      object.velocity.y = 1
+      object.totalFrame = 5
+      if (keys.jump.pressed) {
+          object.velocity.y = -15
+          object.velocity.x = -5
+          
+     }
+  }
+  object.draw()
+}
+
+function slideLeft(object) {
+  if (!object.isGrounded) {
+     console.log('hadfha')
+    object.spriteImg.src =
+      '../assets/pixel_adventure_1/main_characters/virtual_guy/slide-left.png'
+    object.velocity.y = 1
+    object.totalFrame = 5
+    if (keys.jump.pressed) {
+      object.velocity.y = -15
+      object.velocity.x = 5
+    }
+  }
+  object.draw()
 }
