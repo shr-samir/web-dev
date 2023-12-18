@@ -1,9 +1,3 @@
-// for boundary collision of map
-let boundaryArray = []
-for (let i = 0; i < boundaryData.length; i += 85) {
-  boundaryArray.push(boundaryData.slice(i, i + 85))
-}
-
 class MapBoundary {
   static width = 16
   static height = 16
@@ -20,8 +14,66 @@ class MapBoundary {
   }
 }
 
+// boundary definition
+let boundariesBottom = []
+let boundariesTop = []
+let boundariesLeft = []
+let boundariesRight = []
+
+// for boundary collision of map
+let boundaryArray = []
+for (let i = 0; i < boundaryData[level - 1].length; i += 85) {
+  boundaryArray.push(boundaryData[level - 1].slice(i, i + 85)) // change index to 3 it is for map 3
+}
+// console.log(boundaryArray);
+
+boundaryArray.forEach((row, i) => {
+  row.forEach((symbol, j) => {
+    if (symbol === 306) {
+      boundariesBottom.push(
+        new MapBoundary({
+          position: {
+            x: j * MapBoundary.width,
+            y: i * MapBoundary.height,
+          },
+        })
+      )
+    }
+    if (symbol === 307) {
+      boundariesTop.push(
+        new MapBoundary({
+          position: {
+            x: j * MapBoundary.width,
+            y: i * MapBoundary.height,
+          },
+        })
+      )
+    }
+    if (symbol === 304) {
+      boundariesLeft.push(
+        new MapBoundary({
+          position: {
+            x: j * MapBoundary.width,
+            y: i * MapBoundary.height,
+          },
+        })
+      )
+    }
+    if (symbol === 305) {
+      boundariesRight.push(
+        new MapBoundary({
+          position: {
+            x: j * MapBoundary.width,
+            y: i * MapBoundary.height,
+          },
+        })
+      )
+    }
+  })
+})
+
 function boundariesCollision() {
-  // bottom Boundary collision with player
+  // bottom Boundary collision with
   boundariesBottom.forEach((boundaryBottom) => {
     // boundaryBottom.draw()
     if (
@@ -69,7 +121,7 @@ function boundariesCollision() {
 
         // console.log('collision Left')
       }
-     //  console.log('slideLeft');
+      //  console.log('slideLeft');
       slideLeft(player)
       // player.slideLeft()
     }
@@ -96,58 +148,7 @@ function boundariesCollision() {
   })
 }
 
-// boundary definition
-const boundariesBottom = []
-const boundariesTop = []
-const boundariesLeft = []
-const boundariesRight = []
-
-boundaryArray.forEach((row, i) => {
-  row.forEach((symbol, j) => {
-    if (symbol === 260) {
-      boundariesBottom.push(
-        new MapBoundary({
-          position: {
-            x: j * MapBoundary.width,
-            y: i * MapBoundary.height,
-          },
-        })
-      )
-    }
-    if (symbol === 261) {
-      boundariesTop.push(
-        new MapBoundary({
-          position: {
-            x: j * MapBoundary.width,
-            y: i * MapBoundary.height,
-          },
-        })
-      )
-    }
-    if (symbol === 262) {
-      boundariesLeft.push(
-        new MapBoundary({
-          position: {
-            x: j * MapBoundary.width,
-            y: i * MapBoundary.height,
-          },
-        })
-      )
-    }
-    if (symbol === 263) {
-      boundariesRight.push(
-        new MapBoundary({
-          position: {
-            x: j * MapBoundary.width,
-            y: i * MapBoundary.height,
-          },
-        })
-      )
-    }
-  })
-})
-
-// bottom boundary collision check
+// ------------- bottom boundary collision check -------------
 function boundaryCollisionBottom({ rect1, rect2 }) {
   return (
     rect1.position.x <= rect2.position.x + rect2.width &&
@@ -157,7 +158,16 @@ function boundaryCollisionBottom({ rect1, rect2 }) {
   )
 }
 
-// top boundary collision check
+// ------------ top boundary collision check -------------
+function boundaryCollisionBottom_not_object(rect1, rect2) {
+  return (
+    rect1.position.x < rect2.position.x + rect2.width &&
+    rect1.position.x + rect1.width > rect2.position.x &&
+    rect1.position.y + rect1.height >= rect2.position.y &&
+    rect1.position.y + rect1.height <= rect2.position.y + rect2.height / 4
+  )
+}
+
 function boundaryCollisionTop({ rect1, rect2 }) {
   return (
     rect1.position.y <= rect2.position.y + MapBoundary.height &&
@@ -167,7 +177,7 @@ function boundaryCollisionTop({ rect1, rect2 }) {
   )
 }
 
-// left boundary collision check
+// ----------- left boundary collision check ------------
 function boundaryCollisionLeft({ rect1, rect2 }) {
   return (
     rect1.position.x > rect2.position.x &&
@@ -176,8 +186,16 @@ function boundaryCollisionLeft({ rect1, rect2 }) {
     rect1.position.y < rect2.position.y + MapBoundary.height
   )
 }
+function boundaryCollisionLeft_not_object(rect1, rect2) {
+  return (
+    rect1.position.x > rect2.position.x &&
+    rect1.position.x <= rect2.position.x + rect2.width &&
+    rect1.position.y + rect1.height > rect2.position.y &&
+    rect1.position.y < rect2.position.y + rect2.height
+  )
+}
 
-// right boundary collision check
+// ------------ right boundary collision check -------------
 function boundaryCollisionRight({ rect1, rect2 }) {
   return (
     rect1.position.x < rect2.position.x + MapBoundary.width &&
@@ -186,16 +204,24 @@ function boundaryCollisionRight({ rect1, rect2 }) {
     rect1.position.y < rect2.position.y + MapBoundary.height
   )
 }
+function boundaryCollisionRight_not_object(rect1, rect2) {
+  return (
+    rect1.position.x < rect2.position.x + rect2.width &&
+    rect1.position.x + rect1.width >= rect2.position.x
+    // rect1.position.y + rect1.height > rect2.position.y &&
+    // rect1.position.y < rect2.position.y + rect2.height
+  )
+}
 
 //////////////
-// function onCollision(player, obj) {
-//   return (
-//     player.position.x <= obj.position.x + obj.width &&
-//     player.position.x + player.width >= obj.position.x &&
-//     player.position.y <= obj.position.y + obj.height &&
-//     player.position.y + player.height >= obj.position.y
-//   )
-// }
+function onCollision(player, obj) {
+  return (
+    player.position.x <= obj.position.x + obj.width &&
+    player.position.x + player.width >= obj.position.x &&
+    player.position.y <= obj.position.y + obj.height &&
+    player.position.y + player.height >= obj.position.y
+  )
+}
 
 // ------------------- Collision for Player Death ----
 

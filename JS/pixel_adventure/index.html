@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="./style.css">
-     <title>Pixel Adventure (Leapfrog)</title>
-</head>
-<body>
-     <canvas id="canvas"></canvas>
-     <script src="./js/constants.js"></script> 
-     <script src="./js/mapData.js"></script> 
-     <script src="./js/Player.js"></script> 
-     <script src="./js/movement.js"></script> 
-     <script src="./js/boundaryCollision.js"></script> 
-     <script src="./js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Pixel Adventure (Leapfrog)</title>
+  </head>
+  <body>
+   
+
+    <section class="screen" id="game-screen">
+      <canvas id="canvas"></canvas>
+
+      <!-- <div id="instructions">
+        <p>Collect maximum number of fruits to go to the next level </p>
+      </div> -->
+    </section>
+
+    
+    <script src="./js/constants.js"></script>
+    <script src="./js/mapData.js"></script>
+    <script src="./js/enemyData.js"></script>
+    <script src="./js/boundaryCollision.js"></script>
+    <!-- <script src="./js/enemyLocation.js"></script>  -->
+    <script src="./js/Obstacles/spikes.js"></script>
+
+    <script src="./js/Sprite.js"></script>
+    <script src="./js/Enemies/chicken.js"></script>
+    <script src="./js/Enemies/plant.js"></script>
+    <script src="./js/Fruits/fruits.js"></script>
+    <script src="./js/Obstacles/falling_platform.js"></script>
+
+    <script src="./js/SpikedBall.js"></script>
+
+    <script src="./js/Player.js"></script>
+    <script src="./js/movement.js"></script>
+    <script src="./js/algorithm.js"></script>
+    <!-- <script src="./js/obstaclesCollision.js"></script>  -->
+    <script src="./js/main.js"></script>
+    <script src="./js/menu.js"></script>
+
+  </body>
+
 </html>

@@ -6,8 +6,39 @@ function move(object) {
 
   moveJump(object)
 
+  // checkCollision(object1, object2) {
+  
+  if (onCollision(player, bulletImg1) && player.lastKey == 'right') {
+    player.spriteImg.src = '../assets/main_characters/virtual_guy/hit.png'
+    player.totalFrame = 7
+  }
+
+  if (onCollision(player, bulletImg1) && player.lastKey == 'left') {
+    player.spriteImg.src = '../assets/main_characters/virtual_guy/hit-left.png'
+    player.totalFrame = 7
+  }
+
+
+  if (onCollision(player, bulletImg2) && player.lastKey == 'right') {
+    player.spriteImg.src = '../assets/main_characters/virtual_guy/hit.png'
+    player.totalFrame = 7
+  }
+
+  if (onCollision(player, bulletImg2) && player.lastKey == 'left') {
+    player.spriteImg.src = '../assets/main_characters/virtual_guy/hit-left.png'
+    player.totalFrame = 7
+  }
+  // }
+
   spriteSlider(object)
 }
+
+
+
+
+
+
+
 
 function update(object) {
   object.position.x += object.velocity.x
@@ -18,22 +49,38 @@ function update(object) {
     object.velocity.y = 0
     object.isGrounded = true
   }
+
+
+  // ---------- camera box ----------
+  // object.updateCameraBox()
+
+  // ctx.fillStyle = 'rgba(0, 0, 255, 0.2)'
+  // ctx.fillRect(object.camerabox.position.x, object.camerabox.position.y, object.camerabox.width, object.camerabox.height)
+
 }
 
+// ---------------- to change any sprite image -------------------
 function spriteSlider(object) {
-  positionInSprite =
-    Math.floor(object.gameFrame / staggerFrames) % object.totalFrame
-  object.frameX = object.spriteWidth * positionInSprite
-  object.draw()
-  object.gameFrame++
+  object.frameCounter++
+  {
+    positionInSprite =
+      Math.floor(object.gameFrame / staggerFrames) % object.totalFrame
+    object.frameX = object.spriteWidth * positionInSprite 
+
+    
+    object.draw()
+    object.gameFrame++
+  }
 }
 
+// ------------------ player movement -------------------
 function moveRight(object) {
   if (keys.right.pressed) {
     object.spriteImg.src = '../assets/main_characters/virtual_guy/run-right.png'
-    object.velocity.x = 5
+    object.velocity.x = 2
     object.totalFrame = 12
     object.lastKey = 'right'
+    // object?.slideCameraToLeft({canvas, camera})
   } else if (
     object.lastKey == 'right' &&
     !keys.right.pressed &&
@@ -49,9 +96,10 @@ function moveRight(object) {
 function moveLeft(object) {
   if (keys.left.pressed) {
     object.spriteImg.src = '../assets/main_characters/virtual_guy/run-left.png'
-    object.velocity.x = -5
+    object.velocity.x = -2
     object.totalFrame = 12
     object.lastKey = 'left'
+    // object.slideCameraToRight({canvas, camera})
   } else if (object.lastKey == 'left' && !keys.left.pressed) {
     object.spriteImg.src = '../assets/main_characters/virtual_guy/idle-left.png'
     object.velocity.x = 0
@@ -63,7 +111,7 @@ function moveJump(object) {
   if (keys.jump.pressed && object.isGrounded) {
     object.spriteImg.src =
       '../assets/main_characters/virtual_guy/jump-right.png'
-    object.velocity.y = -20
+    object.velocity.y = -15
     object.totalFrame = 1
     object.isGrounded = false
   }
@@ -78,11 +126,11 @@ function slideRight(object) {
     object.velocity.y = 1
     object.totalFrame = 5
     if (keys.jump.pressed) {
-      object.velocity.y = -15
-      object.velocity.x = -5
+      object.velocity.y = -8
+      object.velocity.x = -1
     }
   }
-  object.draw()
+  spriteSlider(object)
 }
 
 function slideLeft(object) {
@@ -92,9 +140,22 @@ function slideLeft(object) {
     object.velocity.y = 1
     object.totalFrame = 5
     if (keys.jump.pressed) {
-      object.velocity.y = -15
-      object.velocity.x = 5
+      object.velocity.y = -8
+      object.velocity.x = 1
     }
   }
-  object.draw()
+  spriteSlider(object)
 }
+
+
+// // ------------------ chicken movement -------------------
+
+// if (onCollision(player, Chicken) && player.lastKey == 'right') {
+//   player.spriteImg.src = '../assets/main_characters/virtual_guy/hit.png'
+//   player.totalFrame = 7
+// }
+
+// if (onCollision(player, Chicken) && player.lastKey == 'left') {
+//   player.spriteImg.src = '../assets/main_characters/virtual_guy/hit-left.png'
+//   player.totalFrame = 7
+// }

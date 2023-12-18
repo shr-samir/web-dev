@@ -4,3 +4,62 @@
   box-sizing: border-box;
   overflow: hidden;
 }
+
+body {
+  /* margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; */
+  background-color: #000; 
+}
+
+canvas {
+  display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid #000;
+}
+
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5%;
+  font-family: 'VT323', monospace;
+}
+
+#instructions {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+}
+#title-image {
+  width: 1000px;
+  height: 350px;
+}
+#game-over-screen{
+  color: white;
+  font-size: 30px;
+  /* gap: 30px; */
+}
+button {
+  margin-top: 20px;
+  background: transparent;
+  font-family: 'VT323', monospace;
+  border: none;
+  color: white;
+  font-size: 30px;
+}
+button:hover {
+  scale: 1.5;
+}
+#btn-difficulty-back {
+  color: gray;
+}
