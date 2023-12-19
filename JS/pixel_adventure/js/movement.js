@@ -66,7 +66,7 @@ function moveRight(object) {
   if (keys.right.pressed) {
     object.spriteImg.src =
       "../assets/main_characters/virtual_guy/run-right.png";
-    object.velocity.x = 1.25;
+    object.velocity.x = 3;
     object.totalFrame = 12;
     object.lastKey = "right";
     // object?.slideCameraToLeft({canvas, camera})
@@ -85,7 +85,7 @@ function moveRight(object) {
 function moveLeft(object) {
   if (keys.left.pressed) {
     object.spriteImg.src = "../assets/main_characters/virtual_guy/run-left.png";
-    object.velocity.x = -1.25;
+    object.velocity.x = -3;
     object.totalFrame = 12;
     object.lastKey = "left";
     // object.slideCameraToRight({canvas, camera})
