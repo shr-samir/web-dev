@@ -35,6 +35,19 @@ class Player {
       width: 200,
       height: 80,
     }
+    this.score = 0
+    this.lives = 3
+    this.onHit = function () {
+      this.spriteImg.src = "../assets/main_characters/virtual_guy/hit.png"
+      this.lives -= 1
+      if (this.lives <= 0) {
+        this.lives = 0
+        gameOver()
+      } else {
+        this.position.x = 100
+        this.position.y = 100
+      }
+    }
   }
 
   draw() {

@@ -3,24 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Pixel Adventure (Leapfrog)</title>
   </head>
   <body>
-   
+    <div id="homepage-overlay">
+      <h1>Pixel Adventure</h1>
+      <button id="start-game">Start Game</button>
+      <button id="end-game">End Game</button>
+      <button id="controls">Credits</button>
 
-    <section class="screen" id="game-screen">
-      <canvas id="canvas"></canvas>
+      
+     </div>
+     
+     <canvas id="canvas" style="display: none"></canvas>
+     
+     <button id="restart-button" style="display: none;">Restart Game</button>
+    <audio id="background-music" preload="auto" loop>
+      <source src="./assets/sounds/mario_theme.mp3" type="audio/mpeg" />
+    </audio>
 
-      <div id="instructions">
-        <p>Collect maximum number of fruits to go to the next level </p>
-      </div>
-    </section>
-
-    
     <script src="./js/constants.js"></script>
     <script src="./js/mapData.js"></script>
     <script src="./js/enemyData.js"></script>
+    <script src="./js/Obstacles/objectsPosition.js"></script>
     <script src="./js/boundaryCollision.js"></script>
     <!-- <script src="./js/enemyLocation.js"></script>  -->
     <script src="./js/Obstacles/spikes.js"></script>
@@ -31,15 +41,15 @@
     <script src="./js/Fruits/fruits.js"></script>
     <script src="./js/Obstacles/falling_platform.js"></script>
 
-    <script src="./js/SpikedBall.js"></script>
+    <script src="./js/Obstacles/spikedBall.js"></script>
+    <script src="./js/Obstacles/ghurra.js"></script>
+    <script src="./js/Obstacles/spikedHead.js"></script>
 
     <script src="./js/Player.js"></script>
     <script src="./js/movement.js"></script>
     <script src="./js/algorithm.js"></script>
     <!-- <script src="./js/obstaclesCollision.js"></script>  -->
     <script src="./js/main.js"></script>
-    <script src="./js/menu.js"></script>
-
   </body>
-
+ 
 </html>

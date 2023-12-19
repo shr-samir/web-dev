@@ -1,7 +1,7 @@
 const platform = {
   position: {
-    x: 730,
-    y: 320,
+    x: 750,
+    y: 350,
   },
   status: true,
   width: 32,
@@ -55,7 +55,7 @@ function fallingPlatform(player, platformImg) {
     player.onPlatfrom = false;
   }
 
-  spriteSlider(platformImg); // Ensure 'spriteSlider' function is defined in your context
+  spriteSlider(platformImg); 
 }
 
 function Collision(rect1, rect2) {

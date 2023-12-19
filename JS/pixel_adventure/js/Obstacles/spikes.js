@@ -9,7 +9,14 @@ const spikesArray = []
 
 terrainArray.forEach((row, i) => {
   row.forEach((symbol, j) => {
-    if (symbol === 255 || symbol === 1073742079) {
+    if (
+      symbol === 255 ||
+      symbol === 1073742079 ||
+      symbol === 2147483903 ||
+      symbol === 3758096639 ||
+      symbol === 2684354815 || 
+      symbol === 1610612991
+    ) {
       spikesArray.push(
         new MapBoundary({
           position: {
@@ -32,9 +39,10 @@ function spikesCollision() {
       )
     ) {
       // console.log('spike collision ')
+      player.onHit()
       player.spriteImg.src = '../assets/main_characters/virtual_guy/hit.png'
       player.totalFrame = 7
-      spriteSlider(player)
+      // spriteSlider(player)
     }
   })
 }

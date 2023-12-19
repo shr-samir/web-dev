@@ -9,37 +9,71 @@ let bob = {
   x: 1183,
   y: 227,
 }
+
 // ---- for bullet animation ----
 let bulletTimer = 25
 let leftBoundry = null
 let plants = {
-  1: {
-    position: {
-      x: 650,
-      y: 510,
-    },
-    is_fired: false,
+  position: {
+    x: 650,
+    y: 510,
   },
+  is_fired: false,
 }
 
-// boundariesLeft.forEach((item, index) => {
-//     setInterval(() => {
+function drawScore() {
+  ctx.font = '24px Retro Gaming'
+  ctx.fillStyle = '#000'
+  ctx.fillText('Score: ' + player.score, canvas.width - 300, 80) // Position the score at the top left
 
-//     if (player.position.y >= plantImg.position.y || item.position.y >= plantImg.position.y){
-//       moveBullet()
-//     }
-//   }, bulletTimer);
-//   });
+  if (player.score >= 220) {
+    ctx.font = '24px Retro Gaming'
+    ctx.fillStyle = 'red'
 
-// draw()
+    ctx.fillText(
+      `Your Score: ${player.score}`,
+      canvas.width / 2 - 100,
+      canvas.height / 2
+    )
+    ctx.fillText(
+      'Congratulations',
+      canvas.width / 2 - 100,
+      canvas.height / 2 + 50
+    )
+  }
+  // console.log('score call');
+}
 
-// ------- camera -------
-// const camera = {
-//   position: {
-//     x: 0,
-//     y: 0,
-//   },
-// }
+function drawLives() {
+  ctx.font = '24px Retro Gaming'
+  ctx.fillStyle = '#000'
+  ctx.fillText('Lives: ' + player.lives, 60, 80) // Position top right
+}
+
+// ----------- game over -----------
+function gameOver() {
+  console.log('Game Over triggered')
+  cancelAnimationFrame(animate)
+
+  ctx.font = '24px Retro Gaming'
+  ctx.fillStyle = 'red'
+  ctx.fillText('Game Over', canvas.width / 2 - 100, canvas.height / 2)
+
+  document.getElementById('restart-game').style.display = 'block'
+}
+
+function restartGame() {
+  player.lives = 3
+  player.score = 0
+  player.position.x = 0
+  player.position.y = 0
+}
+
+document
+  .getElementById('restart-button')
+  .addEventListener('click', function () {
+    restartGame()
+  })
 
 function animate() {
   requestAnimationFrame(animate)
@@ -47,39 +81,62 @@ function animate() {
   // ctx.drawImage(mapImage, 455, 0, 4000, 720, 0, 0, canvas.width, canvas.height)
   ctx.drawImage(mapImage, 0, 0)
 
-  // ctx.translate(camera.position.x, 0)
+  // ------------- level 1 -------------
 
-  chicken()
-  // console.log(plantImg1)
-  plant(plantImg1, bulletImg1)
-  plant(plantImg2, bulletImg2)
+  if (level === 1) {
+    drawFruits()
 
-  fallingPlatform(player, platformImg)
+    chicken()
 
-  // plant()
-  let [temp_x, temp_y] = oscillateSpikedChainBall(
-    origin.x,
-    origin.y,
-    bob.x,
-    bob.y
-  )
-  bob.x = temp_x
-  bob.y = temp_y
-  drawSpikedChainedBall(origin.x, origin.y, bob.x, bob.y)
-  // plantImg.draw()
+    ghurra()
 
-  // spriteSlider(plantImg)
-  // bulletImg.draw()
+    fallingPlatform(player, platformImg)
 
-  fallingPlatform(player, platformImg)
+    plant(plantImg1, bulletImg1)
+    plant(plantImg2, bulletImg2)
 
-  move(player)
-  update(player)
+    fallingPlatform(player, platformImg)
 
-  // bulletImg.position.x = bulletImg.position.x - 2
-  // setInterval((bulletImg) => {
-  //   bulletImg.position.x = 350 - 16
-  // }, 500);
+    move(player)
+    update(player)
+
+    let [temp_x, temp_y] = oscillateSpikedChainBall(
+      origin.x,
+      origin.y,
+      bob.x,
+      bob.y
+    )
+    bob.x = temp_x
+    bob.y = temp_y
+    drawSpikedChainedBall(origin.x, origin.y, bob.x, bob.y)
+
+    drawScore()
+    drawLives()
+  }
+
+  // drawSpikeHead()
+
+  if (level === 2) {
+    drawFruits()
+    chicken()
+    ghurra()
+    fallingPlatform()
+    move(player)
+    update(player)
+
+    let [temp_x, temp_y] = oscillateSpikedChainBall(
+      origin.x,
+      origin.y,
+      bob.x,
+      bob.y
+    )
+    bob.x = temp_x
+    bob.y = temp_y
+    drawSpikedChainedBall(origin.x, origin.y, bob.x, bob.y)
+  }
+
+  if (level === 3) {
+  }
 
   spikesCollision()
   boundariesCollision()
@@ -101,9 +158,6 @@ window.addEventListener('keydown', (e) => {
     case 'ArrowUp':
     case 'KeyW':
       keys.jump.pressed = true
-      // if (keys.jump.pressed) {
-      //   player.jump()
-      // }
       break
   }
 })

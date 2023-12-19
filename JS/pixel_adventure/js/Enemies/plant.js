@@ -16,7 +16,7 @@ function createPlant(x, y) {
     plantParam.width,
     plantParam.height,
     plantParam.width * 1.5,
-    plantParam.height * 1.5
+    plantParam.height * 1.5,
     // 360,
     // 640,
     // // canvas.height - 190,
@@ -27,15 +27,17 @@ function createPlant(x, y) {
     // 42 * 1.5
   )
   plantImgg.totalFrame = 11
+  plantImgg.plant_collision_check = false
   return plantImgg
 }
-plant_collision_check = false
+// plant_collision_check = false
 player_collision_check = false
+
+// --------- create instance of plant ---------------
 const plantImg1 = createPlant(plantParam.position.x, plantParam.position.y)
 const plantImg2 = createPlant(580, 257)
 
 function plant(plantImg, bulletImg) {
-  spriteSlider(plantImg)
   let diff_x = 0
   let temp_diff = 5000
   boundariesLeft.forEach((item, index) => {
@@ -50,53 +52,50 @@ function plant(plantImg, bulletImg) {
     }
   })
   if (player.position.y >= plantImg.position.y) {
-    plants[1].is_fired = true
+    plants.is_fired = true
   }
-  let isBulletFired = plants[1].is_fired
+  let isBulletFired = plants.is_fired
   if (isBulletFired) {
-    moveBullet(bulletImg1, plantImg1)
-    moveBullet(bulletImg2, plantImg2)
+    moveBullet(bulletImg, plantImg)
+    // moveBullet(bulletImg2, plantImg2)
   }
   if (player.position.x + 64 >= bulletImg.position.x) {
-    plants[1].is_fired = false
+    plants.is_fired = false
   } else if (
     leftBoundry &&
     leftBoundry.position.x + 16 >= bulletImg.position.x
   ) {
-    plants[1].is_fired = false
+    plants.is_fired = false
   }
   if (!player_collision_check) {
     if (boundaryCollisionLeft_not_object(player, plantImg)) {
       player.spriteImg.src = 'assets/main_characters/virtual_guy/hit.png'
       player.totalFrame = 7
-      player.position.y -= 150
+      player.position.y += 150
       spriteSlider(player)
+      player.onHit()
       console.log('Player kill')
       player_collision_check = true
     }
   }
-  if (!plant_collision_check) {
     if (boundaryCollisionBottom_not_object(player, plantImg)) {
+      player.score +=50
       plantImg.spriteImg.src = 'assets/Enemies/Plant/hit.png'
       plantImg.totalFrame = 5
-      spriteSlider(plantImg)
-      plantImg.position.y -= 50 // Update the y position
-      animate_dead_plant()
-      console.log('plant kill')
-      plant_collision_check = true
+      // console.log('plant kill')
+      plantImg.plant_collision_check = true
       player_collision_check = true
     }
-  }
+    
+    if (plantImg.plant_collision_check) {
+      if (plantImg.position.y < canvas.height) {
+        plantImg.position.y += 2;
+      } else {
+        plant_collision_check = false; // Stop moving when lower limit is reached
+      }
+    }
+  spriteSlider(plantImg)
 }
-
-// function animate_dead_plant() {
-//   plantImg.position.y += 2 // Update the y position
-
-//   // Check if the object has moved out of the canvas
-//   if (plantImg.position.y - plantImg.height < canvas.height) {
-//     requestAnimationFrame(animate_dead_plant) // Continue the animation
-//   }
-// }
 
 function createBullet(plantImg) {
   const bulletImg = new Sprite(
@@ -126,13 +125,27 @@ function drawBullet(bulletImg) {
 }
 
 function moveBullet(bulletImg, plantImg) {
-  bulletImg.position.x -= 4
+  bulletImg.position.x -= 1.5
   // Reset the bullet's position after a certain interval
-  if (
-    bulletImg.position.x <= player.position.x + 32 ||
-    bulletImg.position <= leftBoundry.position.x
-  ) {
-    bulletImg.position.x = plantImg.position.x
+  if (player.position.y >= plantImg.position.y) {
+    // console.log('bullet')
+    bulletImg.draw()
+    bulletImg.hasLaunched = true
   }
-  bulletImg.draw()
+  if (onCollision(player, bulletImg)) {
+    if (player.position.x + player.width === bulletImg.position.x) {
+      player.onHit()
+      bulletImg.hasLaunched = false
+    }
+  }
+
+  if (bulletImg.hasLaunched) {
+    bulletImg.draw()
+    if (bulletImg.position.x <= leftBoundry.position.x) {
+      bulletImg.position.x = plantImg.position.x
+    }
+  }
 }
+
+
+

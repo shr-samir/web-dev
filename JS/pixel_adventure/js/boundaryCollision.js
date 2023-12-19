@@ -158,7 +158,6 @@ function boundaryCollisionBottom({ rect1, rect2 }) {
   )
 }
 
-// ------------ top boundary collision check -------------
 function boundaryCollisionBottom_not_object(rect1, rect2) {
   return (
     rect1.position.x < rect2.position.x + rect2.width &&
@@ -168,7 +167,17 @@ function boundaryCollisionBottom_not_object(rect1, rect2) {
   )
 }
 
+// ------------ top boundary collision check -------------
 function boundaryCollisionTop({ rect1, rect2 }) {
+  return (
+    rect1.position.y <= rect2.position.y + MapBoundary.height &&
+    rect1.position.x + rect1.width > rect2.position.x &&
+    rect1.position.x < rect2.position.x + rect2.width &&
+    rect1.position.y - rect1.velocity.y >= rect2.position.y + MapBoundary.height
+  )
+}
+
+function boundaryCollisionTop_not_object(rect1, rect2) {
   return (
     rect1.position.y <= rect2.position.y + MapBoundary.height &&
     rect1.position.x + rect1.width > rect2.position.x &&
