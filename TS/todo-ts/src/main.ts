@@ -26,7 +26,6 @@ form?.addEventListener('submit', (e) => {
   input.value = '';
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const savedTasks = JSON.parse(localStorage.getItem('taskList') || '[]');
   savedTasks.forEach((taskData: Task) => {
@@ -83,12 +82,11 @@ function renderList(tasks: TaskList) {
     const label = document.createElement('label');
     const inputField = document.createElement('input');
     const taskValue = document.createElement('span');
-    const deleteBtn = document.createElement('button');
+    const deleteIcon = document.createElement('div');
 
     element.classList.add('task-item');
 
     label.classList.add('form-control');
-    
 
     inputField.setAttribute('type', 'checkbox');
     inputField.checked = task.completed;
@@ -97,20 +95,23 @@ function renderList(tasks: TaskList) {
       toggleTaskCompleted(task.id);
     });
 
-
     // ------- task item text --------
     taskValue.classList.add('task-item-value');
     taskValue.textContent = task.text;
 
     // ------- delete btn --------
-    deleteBtn.classList.add('delete')
-    deleteBtn.innerHTML = `<i class="fas fa-trash" ></i>`;
 
+    deleteIcon.classList.add('delete');
+    deleteIcon.innerHTML = `<i class="fas fa-trash" ></i>`;
+
+    deleteIcon.addEventListener('click', () => {
+      deleteTask(task.id);
+    });
     // ------- append ----------
     element.appendChild(label);
     label.appendChild(inputField);
     label.appendChild(taskValue);
-    element.appendChild(deleteBtn);
+    element.appendChild(deleteIcon);
 
     listItem.appendChild(element);
   });
@@ -130,6 +131,10 @@ function render(searchParam: string = '') {
 
 render();
 
+function deleteTask(id: string) {
+  taskList.removeFromList(id);
+  render();
+}
 
 // function taskModify(event) {
 //   const clickedEle = event.target;
