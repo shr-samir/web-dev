@@ -3,7 +3,7 @@ create table Employees (
 	lastName varchar(50),
 	firstName varchar(50),
 	birthDate date,
-	photo bytea,
+	photo varchar(100),
 	notes text
 )
 
