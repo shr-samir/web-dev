@@ -1,0 +1,9 @@
+CREATE TABLE CUSTOMERS	(
+	CustomerId SERIAL PRIMARY KEY,
+	CustomerName VARCHAR(80),
+	ContactName VARCHAR(50),
+	Address VARCHAR(100),
+	City VARCHAR(30),
+	PostalCode VARCHAR(30),
+	Country VARCHAR(30)
+)

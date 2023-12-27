@@ -1,0 +1,5 @@
+CREATE TABLE CATEGORIES	(
+	CategoryId SERIAL PRIMARY KEY,
+	CategoryName VARCHAR(50),
+	Description VARCHAR(255)
+)

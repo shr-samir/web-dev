@@ -43,6 +43,22 @@ input {
   flex-direction: column;
 }
 
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statusToggler {
+  cursor: pointer;
+}
+
+.searchBar {
+  width: 100%;
+  margin-top: 15px;
+}
+
 #addTask {
   width: 100%;
 }

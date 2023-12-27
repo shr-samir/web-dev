@@ -10,6 +10,9 @@ const form = document.querySelector<HTMLFormElement>('#addTask');
 const input = document.querySelector<HTMLInputElement>('#newTask');
 const listItem = document.querySelector<HTMLUListElement>('#taskList');
 
+
+
+
 const taskList = new TaskList();
 
 form?.addEventListener('submit', (e) => {
