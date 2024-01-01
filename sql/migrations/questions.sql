@@ -110,3 +110,17 @@ from customers c
 left join orders o 
 on c.customerid = o.customerid
 where o.customerid is null;
+
+19.
+select * from orders
+where orderdate > now()
+
+20.
+update orders 
+set orderdate = '1997-02-12'
+where orderid = 10443;
+
+21.
+update suppliers
+set country = 'Canada'
+where supplierid = 29;
