@@ -8,10 +8,13 @@ import {
   getTodoById,
   getUserTodos,
 } from '../controller/todo';
+import { validateReqBody, validateReqQuery } from '../middleware/validator';
+import { todoQuerySchema, todoSchema } from '../schema/todo';
+
 
 const router = Router();
 
-router.route('/').get(getUserTodos).post(addTodo);
-router.route('/:id').get(getTodoById).delete(deleteTodo).put(updateTodo);
+router.route('/').get(getUserTodos).post(validateReqBody(todoSchema),addTodo);
+router.route('/:id').get(validateReqQuery(todoQuerySchema),getTodoById).delete(deleteTodo).put(updateTodo);
 
 export default router;
